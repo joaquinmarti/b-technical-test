@@ -1,0 +1,25 @@
+enum MyEvents {
+  click = "click",
+  hover = "hover"
+}
+
+type ClickEvent = {
+  value: 'click'
+}
+
+type HoverEvent = {
+  value: 'hover'
+}
+
+function handleEvent (type: MyEvents.click, payload: ClickEvent): void
+function handleEvent (type: MyEvents.hover, payload: HoverEvent): void
+function handleEvent(type: MyEvents, payload: ClickEvent | HoverEvent)  {
+  
+
+  
+  console.log(payload)
+
+}
+
+handleEvent(MyEvents.click, {value: "click"})
+handleEvent(MyEvents.hover, {value: "hover"})
